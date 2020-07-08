@@ -9,7 +9,7 @@ def setLabel(image, str, contour):
     cv2.rectangle(image, (pt_x, pt_y+baseline), (pt_x+text_width, pt_y-text_height), (200,200,200), cv2.FILLED)
     cv2.putText(image, str, (pt_x, pt_y), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,0), 1, 8)
 
-img = cv2.imread('3.jpg')
+img = cv2.imread('images/3.jpg')
 cv2.imshow('original img', img)
 
 img = cv2.fastNlMeansDenoisingColored(img,None,7,7,5,7)
