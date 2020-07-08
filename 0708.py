@@ -45,17 +45,17 @@ for i in range(len(contours)):
 
     size=len(approx)
     
-    #for k in range(size-1):
-    #    if(abs(box_area - area) <20 ):
-    #        cv2.line(img, tuple(approx[k][0]), tuple(approx[k+1][0]), (255, 0, 0), 1)
+    for k in range(size-1):
+        #if(abs(box_area - area) <20 ):
+            cv2.line(img, tuple(approx[k][0]), tuple(approx[k+1][0]), (255, 0, 0), 1)
 
     if cv2.isContourConvex(approx):
         if (size == 4):
             #setLabel(img,"rectangle",cnt)
             img = cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
 
-    cv2.imshow('contour', img)
 
+cv2.imshow('contour',img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
